@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='helper',
@@ -8,6 +8,6 @@ setup(
     author='Pythonic Coders',
     author_email='',
     license='MIT',
-    packages=['_helper_'],
-    entry_points={'console_scripts': ['bot-helper = helper.bot:helper']}
+    packages=find_packages(),
+    entry_points={'console_scripts': ['bot-helper = helper.bot:helper']},
 )

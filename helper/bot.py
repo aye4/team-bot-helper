@@ -1,8 +1,8 @@
 from re import search
 from pathlib import Path
-from classes import AddressBook, Record, Phone, Birthday, Name, Email
-from classes import NoteBook, RECORD_HEADER, LINE, NOTE_HEADER
-from clean import sort_files
+from helper.classes import AddressBook, Record, Phone, Birthday, Name, Email
+from helper.classes import NoteBook, RECORD_HEADER, LINE, NOTE_HEADER
+from helper.clean import sort_files
 
 TEXT_FORMAT = "%d %b %Y"
 SELECT_CONTACT = "Press Enter or type a row number to select a contact: "
@@ -128,6 +128,9 @@ MESSAGE = {
 }
 CTRL_C = "{~"
 F6 = "}~"
+
+contacts = AddressBook()
+notes = NoteBook()
 
 
 def input_str(message: str) -> str:
@@ -545,6 +548,4 @@ def helper():
 
 
 if __name__ == "__main__":
-    contacts = AddressBook()
-    notes = NoteBook()
     helper()
