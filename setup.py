@@ -4,7 +4,7 @@ setup(
     name='helper',
     version='1',
     description='personal helper',
-    url='http://github.com/aye4/bot-helper',
+    url='http://github.com/aye4/team-bot-helper',
     author='Pythonic Coders',
     author_email='',
     license='MIT',
