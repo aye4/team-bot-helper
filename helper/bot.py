@@ -345,15 +345,10 @@ def edit_note(user_input: str, selected: int, action: int):
             return A_EDIT_NOTE_TEXT, selected
         elif user_input == '2':    # = Delete existing hashtag
             if notes[selected]['tags']:
-                if len(notes[selected]['tags']) > 1:
-                    print()
-                    for i, tag in enumerate(notes[selected]['tags']):
-                        print(f"{i} = {tag}")
-                    return A_EDIT_NOTE_DEL_TAG, selected
-                else:
-                    tag = notes[selected].tags[0]
-                    notes.delete_tag(selected, tag)
-                    print(f"\nHashtag '{tag}' has been deleted.\n")
+                print()
+                for i, tag in enumerate(notes[selected]['tags']):
+                    print(f"{i} = {tag}")
+                return A_EDIT_NOTE_DEL_TAG, selected
             else:
                 print("\nThere are 0 hashtags in the selected note\n")
         elif user_input == '3':    # = Add new hashtag
@@ -482,7 +477,8 @@ def main_menu(user_input: str, selected, action: int):
     if user_input == "0" or user_input == CTRL_C:  # = Exit (Ctrl+C)
         contacts.write_to_file()
         notes.write_to_file()
-        exit("Good bye!")
+        print("Good bye!")
+        exit()
     if user_input == "1":            # = Add new contact
         return A_ADD, None
     if user_input == "2":            # = Add new note
