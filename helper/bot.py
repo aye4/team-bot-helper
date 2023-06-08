@@ -533,7 +533,7 @@ menu_functions = {
 }
 
 
-def helper():
+def bot_helper():
     action = A_MAIN
     selected = None
     while True:
@@ -548,4 +548,4 @@ def helper():
 
 
 if __name__ == "__main__":
-    helper()
+    bot_helper()
